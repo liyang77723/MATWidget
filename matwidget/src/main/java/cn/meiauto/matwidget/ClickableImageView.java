@@ -24,8 +24,6 @@ public class ClickableImageView extends AppCompatImageView {
 
     public ClickableImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-        setClickable(true);
     }
 
     @SuppressLint("ClickableViewAccessibility")
