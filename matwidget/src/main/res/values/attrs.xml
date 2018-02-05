@@ -8,4 +8,8 @@
         <attr name="startColor" format="color" />
         <attr name="endColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="ClickableTextView">
+        <attr name="clickAlpha" format="float" />
+    </declare-styleable>
 </resources>

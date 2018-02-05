@@ -7,12 +7,17 @@
     android:orientation="vertical"
     tools:context="cn.meiauto.matwidget.simple.MainActivity">
 
-    <cn.meiauto.matwidget.image.ClickableImageView
+    <cn.meiauto.matwidget.text.ClickableTextView
         android:id="@+id/civ_main"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/ic_launcher" />
+        android:drawablePadding="4dp"
+        android:drawableRight="@mipmap/ic_launcher"
+        android:gravity="center"
+        app:clickAlpha="0.1"
+        android:clickable="true"
+        android:text="XXX" />
 
     <LinearLayout
         android:layout_width="match_parent"
