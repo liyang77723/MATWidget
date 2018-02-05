@@ -48,8 +48,8 @@ public class ClickableTextView extends AppCompatTextView {
     public ClickableTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ClickTextView);
-        float ca = array.getFloat(R.styleable.ClickTextView_clickAlpha, 0.5F);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ClickableTextView);
+        float ca = array.getFloat(R.styleable.ClickableTextView_clickAlpha, 0.5F);
         array.recycle();
 
         if (ca < 0 && ca > 1) {
