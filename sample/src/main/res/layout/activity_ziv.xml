@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cn.meiauto.matwidget.ZoomImageView
+<cn.meiauto.matwidget.image.ZoomImageView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ziv"
     android:layout_width="match_parent"

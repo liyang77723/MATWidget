@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.meiauto.matwidget.simple.MainActivity"
-    >
+    tools:context="cn.meiauto.matwidget.simple.MainActivity">
 
-    <cn.meiauto.matwidget.ClickableImageView
+    <cn.meiauto.matwidget.image.ClickableImageView
         android:id="@+id/civ_main"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/ic_launcher"
-        />
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <cn.meiauto.matwidget.text.LinearGradientTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="垂直颜色渐变"
+            app:direction="vertical"
+            app:endColor="#f00"
+            app:startColor="#0f0" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <cn.meiauto.matwidget.text.LinearGradientTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="水平颜色渐变"
+            app:endColor="#f00"
+            app:startColor="#00f" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lv_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package cn.meiauto.matwidget;
+package cn.meiauto.matwidget.image;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
