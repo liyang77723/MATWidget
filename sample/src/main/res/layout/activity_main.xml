@@ -16,9 +16,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:clickable="true"
-            app:clickAlpha="0.2"
             android:focusable="true"
-            android:text="有点击效果的图片文字" />
+            android:text="有点击效果的图片文字"
+            app:clickAlpha="0.2" />
 
         <cn.meiauto.matwidget.text.ClickableTextView
             android:id="@+id/civ_main"
@@ -43,7 +43,6 @@
             android:src="@mipmap/ic_launcher" />
     </RelativeLayout>
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,6 +66,11 @@
             app:endColor="#f00"
             app:startColor="#00f" />
     </RelativeLayout>
+
+    <cn.meiauto.matwidget.progress.CircleTextProgressBar
+        android:layout_width="80dp"
+        app:progress="99"
+        android:layout_height="80dp" />
 
     <ListView
         android:id="@+id/lv_main"

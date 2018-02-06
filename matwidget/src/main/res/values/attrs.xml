@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <attr name="progress" format="float" />
+    <attr name="strokeWidth" format="dimension" />
+    <attr name="duration" format="integer" />
+    <attr name="text" format="string" />
+    <attr name="icon" format="reference" />
+
     <declare-styleable name="LinearGradientTextView">
         <attr name="direction" format="enum">
             <enum name="horizontal" value="0" />
@@ -11,5 +18,12 @@
 
     <declare-styleable name="ClickableTextView">
         <attr name="clickAlpha" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleTextProgressBar">
+        <attr name="progress" />
+        <attr name="strokeWidth" />
+        <attr name="duration" />
+        <attr name="text" />
     </declare-styleable>
 </resources>
