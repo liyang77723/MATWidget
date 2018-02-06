@@ -7,22 +7,46 @@
     android:orientation="vertical"
     tools:context="cn.meiauto.matwidget.simple.MainActivity">
 
-    <cn.meiauto.matwidget.text.ClickableTextView
-        android:id="@+id/civ_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:drawablePadding="4dp"
-        android:drawableRight="@mipmap/ic_launcher"
-        android:gravity="center"
-        app:clickAlpha="0.1"
-        android:clickable="true"
-        android:text="XXX" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <LinearLayout
+        <cn.meiauto.matwidget.text.ClickableTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            app:clickAlpha="0.2"
+            android:focusable="true"
+            android:text="有点击效果的图片文字" />
+
+        <cn.meiauto.matwidget.text.ClickableTextView
+            android:id="@+id/civ_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:clickable="true"
+            android:drawablePadding="4dp"
+            android:drawableRight="@mipmap/ic_launcher"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="XXX" />
+
+        <cn.meiauto.matwidget.image.ClickableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@mipmap/ic_launcher" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:padding="8dp">
 
         <cn.meiauto.matwidget.text.LinearGradientTextView
@@ -33,18 +57,16 @@
             app:endColor="#f00"
             app:startColor="#0f0" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
 
         <cn.meiauto.matwidget.text.LinearGradientTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:text="水平颜色渐变"
             app:endColor="#f00"
             app:startColor="#00f" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/lv_main"

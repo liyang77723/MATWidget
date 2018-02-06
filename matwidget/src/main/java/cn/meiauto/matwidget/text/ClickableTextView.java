@@ -32,10 +32,11 @@ import cn.meiauto.matwidget.R;
 public class ClickableTextView extends AppCompatTextView {
 
     private final int mTextViewNormalColor, mTextViewPressedColor;
-    private final int mClickAlpha;
+
+    private static final float DEFAULT_ALPHA = 0.6F;
 
     private Drawable[] mDrawables;
-    private boolean mClickable;
+    private int mClickAlpha;
 
     public ClickableTextView(Context context) {
         this(context, null);
@@ -49,11 +50,11 @@ public class ClickableTextView extends AppCompatTextView {
         super(context, attrs, defStyleAttr);
 
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ClickableTextView);
-        float ca = array.getFloat(R.styleable.ClickableTextView_clickAlpha, 0.5F);
+        float ca = array.getFloat(R.styleable.ClickableTextView_clickAlpha, DEFAULT_ALPHA);
         array.recycle();
 
         if (ca < 0 && ca > 1) {
-            ca = 0.5F;
+            ca = DEFAULT_ALPHA;
         }
         mClickAlpha = (int) (ca * 255);
 
@@ -69,7 +70,7 @@ public class ClickableTextView extends AppCompatTextView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mClickable) {
+        if (isClickable()) {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     setClickStatus();
@@ -114,11 +115,5 @@ public class ClickableTextView extends AppCompatTextView {
     @Override
     public boolean performClick() {
         return super.performClick();
-    }
-
-    @Override
-    public void setClickable(boolean clickable) {
-        super.setClickable(clickable);
-        mClickable = clickable;
     }
 }
