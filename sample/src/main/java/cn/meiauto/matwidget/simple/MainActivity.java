@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import cn.meiauto.matwidget.listview.BaseListAdapter;
 import cn.meiauto.matwidget.listview.BaseViewHolder;
 import cn.meiauto.matwidget.listview.IConvertView;
+import cn.meiauto.matwidget.progress.CircleTextProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final CircleTextProgressBar circleTextProgressBar = findViewById(R.id.ctpb);
+
+
         ListView listView = findViewById(R.id.lv_main);
         BaseListAdapter<Content> adapter = new BaseListAdapter<>(this, android.R.layout.simple_list_item_1, new IConvertView<Content>() {
             @Override
@@ -31,14 +34,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         listView.setAdapter(adapter);
+        adapter.addAll(contents);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(MainActivity.this, contents[position].clazz));
+//                startActivity(new Intent(MainActivity.this, contents[position].clazz));
+                circleTextProgressBar.startAnim();
+
             }
         });
 
-        adapter.addAll(contents);
     }
 
     class Content {

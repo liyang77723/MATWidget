@@ -139,7 +139,6 @@ public class CircleTextProgressBar extends View {
                 matrix.setRotate(-90f, canvas.getWidth() / 2, canvas.getHeight() / 2);
                 mSGLack.setLocalMatrix(matrix);
             }
-            mPaint.setShader(mSGLack);
         } else if (mAnimProgress < 80) {
             if (mSGNormal == null) {
                 mSGNormal = new SweepGradient(
@@ -153,7 +152,6 @@ public class CircleTextProgressBar extends View {
                 matrix.setRotate(-90f, canvas.getWidth() / 2, canvas.getHeight() / 2);
                 mSGNormal.setLocalMatrix(matrix);
             }
-            mPaint.setShader(mSGNormal);
         } else {
             if (mSGFull == null) {
                 mSGFull = new SweepGradient(
@@ -167,6 +165,13 @@ public class CircleTextProgressBar extends View {
                 matrix.setRotate(-90f, canvas.getWidth() / 2, canvas.getHeight() / 2);
                 mSGFull.setLocalMatrix(matrix);
             }
+        }
+
+        if (mProgress < 60) {
+            mPaint.setShader(mSGLack);
+        } else if (mAnimProgress < 80) {
+            mPaint.setShader(mSGNormal);
+        } else {
             mPaint.setShader(mSGFull);
         }
 
@@ -208,8 +213,6 @@ public class CircleTextProgressBar extends View {
         } else if (heightSpecMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(widthSpecSize, mDefaultSize);
         }
-
-
     }
 
     public void startAnim() {
