@@ -76,7 +76,7 @@ public class ClickableTextView extends AppCompatTextView {
                     setClickStatus();
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    resetClickStatus();
+                    setClickStatus();
                     break;
                 case MotionEvent.ACTION_UP:
                     performClick();

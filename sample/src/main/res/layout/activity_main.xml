@@ -67,12 +67,6 @@
             app:startColor="#00f" />
     </RelativeLayout>
 
-    <cn.meiauto.matwidget.progress.CircleTextProgressBar
-        android:id="@+id/ctpb"
-        android:layout_width="80dp"
-        app:progress="99"
-        android:layout_height="80dp" />
-
     <ListView
         android:id="@+id/lv_main"
         android:layout_width="match_parent"

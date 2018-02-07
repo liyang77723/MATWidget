@@ -35,7 +35,7 @@ public class ClickableImageView extends AppCompatImageView {
                     setColorFilter(SELECT_COLOR, PorterDuff.Mode.SRC_ATOP);
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    clearColorFilter();
+                    setColorFilter(SELECT_COLOR, PorterDuff.Mode.SRC_ATOP);
                     break;
                 case MotionEvent.ACTION_UP:
                     clearColorFilter();
