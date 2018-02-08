@@ -13,8 +13,8 @@ import cn.meiauto.matwidget.listview.IConvertView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Content[] contents = {
-            new Content("ZoomImageView", ZoomImageViewActivity.class)
+    Class[] activities = {
+            ZoomImageViewActivity.class
     };
 
     @Override
@@ -23,31 +23,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView listView = findViewById(R.id.lv_main);
-        BaseListAdapter<Content> adapter = new BaseListAdapter<>(this, android.R.layout.simple_list_item_1, new IConvertView<Content>() {
+        BaseListAdapter<Class> adapter = new BaseListAdapter<>(this, android.R.layout.simple_list_item_1, new IConvertView<Class>() {
             @Override
-            public void convertDataToView(BaseViewHolder holder, Content content, int position) {
-                holder.setText(android.R.id.text1, content.name);
+            public void convertDataToView(BaseViewHolder holder, Class activity, int position) {
+                holder.setText(android.R.id.text1, activity.getSimpleName());
             }
         });
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(MainActivity.this, contents[position].clazz));
+                startActivity(new Intent(MainActivity.this, activities[position]));
             }
         });
 
-        adapter.addAll(contents);
-
-    }
-
-    class Content {
-        String name;
-        Class clazz;
-
-        Content(String name, Class clazz) {
-            this.name = name;
-            this.clazz = clazz;
-        }
+        adapter.addAll(activities);
     }
 }
