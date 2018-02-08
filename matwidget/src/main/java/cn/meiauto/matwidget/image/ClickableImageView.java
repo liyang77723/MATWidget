@@ -16,15 +16,17 @@ public class ClickableImageView extends AppCompatImageView {
     private static final int SELECT_COLOR = 0x33555555;
 
     public ClickableImageView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public ClickableImageView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public ClickableImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
+        setClickable(true);
     }
 
     @Override

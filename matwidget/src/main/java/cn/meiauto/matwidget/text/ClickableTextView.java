@@ -22,7 +22,6 @@ import cn.meiauto.matwidget.R;
  *     android:drawableRight="@mipmap/ic_launcher"
  *     android:gravity="center"
  *     app:clickAlpha="0.1"
- *     android:clickable="true"
  *     android:text="XXX" />
  * </pre>
  * author : LiYang
@@ -66,6 +65,8 @@ public class ClickableTextView extends AppCompatTextView {
         mTextViewPressedColor = Color.argb(mClickAlpha, red, green, blue);
 
         mDrawables = getCompoundDrawables();
+
+        setClickable(true);
     }
 
     @Override
