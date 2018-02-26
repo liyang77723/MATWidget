@@ -1,5 +1,6 @@
 package cn.meiauto.matwidget.text;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -69,6 +70,7 @@ public class ClickableTextView extends AppCompatTextView {
         setClickable(true);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isClickable()) {
@@ -77,7 +79,6 @@ public class ClickableTextView extends AppCompatTextView {
                     setClickStatus();
                     break;
                 case MotionEvent.ACTION_UP:
-                    performClick();
                     resetClickStatus();
                     break;
                 case MotionEvent.ACTION_CANCEL:
@@ -108,10 +109,5 @@ public class ClickableTextView extends AppCompatTextView {
                 drawable.setAlpha(255);
             }
         }
-    }
-
-    @Override
-    public boolean performClick() {
-        return super.performClick();
     }
 }

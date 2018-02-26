@@ -1,5 +1,6 @@
 package cn.meiauto.matwidget.image;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.support.v7.widget.AppCompatImageView;
@@ -29,6 +30,7 @@ public class ClickableImageView extends AppCompatImageView {
         setClickable(true);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isClickable()) {
@@ -38,7 +40,6 @@ public class ClickableImageView extends AppCompatImageView {
                     break;
                 case MotionEvent.ACTION_UP:
                     clearColorFilter();
-                    performClick();
                     break;
                 case MotionEvent.ACTION_CANCEL:
                     clearColorFilter();
@@ -46,10 +47,5 @@ public class ClickableImageView extends AppCompatImageView {
             }
         }
         return super.onTouchEvent(event);
-    }
-
-    @Override
-    public boolean performClick() {
-        return super.performClick();
     }
 }
