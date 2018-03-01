@@ -67,16 +67,17 @@
             app:startColor="#00f" />
     </RelativeLayout>
 
-    <cn.meiauto.matwidget.text.MarqueeTextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:text="run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run" />
+        android:layout_height="wrap_content">
+
+        <cn.meiauto.matwidget.text.MarqueeTextView
+            style="@style/MATWidget.MarqueeTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run" />
+
+    </FrameLayout>
 
     <ListView
         android:id="@+id/lv_main"
