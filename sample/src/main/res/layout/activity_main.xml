@@ -17,7 +17,7 @@
             android:layout_centerInParent="true"
             android:clickable="true"
             android:focusable="true"
-            android:text="有点击效果的图片文字"
+            android:text="←有点击效果的图片文字→"
             app:clickAlpha="0.2" />
 
         <cn.meiauto.matwidget.text.ClickableTextView
@@ -72,10 +72,10 @@
         android:layout_height="wrap_content">
 
         <cn.meiauto.matwidget.text.MarqueeTextView
-            style="@style/MATWidget.MarqueeTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run" />
+            android:text="run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run run"
+            tools:style="@style/MATWidget.MarqueeTextStyle" />
 
     </FrameLayout>
 
