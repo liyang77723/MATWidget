@@ -56,6 +56,7 @@ public class BaseListAdapter<T> extends BaseAdapter implements IHandleAdapterDat
         return convertView;
     }
 
+    @Override
     public void add(T bean) {
         if (null != mBeans && null != bean) {
             mBeans.add(bean);
@@ -63,6 +64,7 @@ public class BaseListAdapter<T> extends BaseAdapter implements IHandleAdapterDat
         }
     }
 
+    @Override
     public void addAll(List<T> beans) {
         if (null != mBeans && null != beans) {
             mBeans.addAll(beans);
@@ -78,6 +80,7 @@ public class BaseListAdapter<T> extends BaseAdapter implements IHandleAdapterDat
         }
     }
 
+    @Override
     public void insert(int position, T bean) {
         if (null != mBeans && null != bean) {
             mBeans.add(position, bean);
@@ -85,9 +88,18 @@ public class BaseListAdapter<T> extends BaseAdapter implements IHandleAdapterDat
         }
     }
 
+    @Override
     public void remove(int position) {
         if (null != mBeans && !mBeans.isEmpty()) {
             mBeans.remove(position);
+            notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void remove(T bean) {
+        if (null != mBeans && !mBeans.isEmpty()) {
+            mBeans.remove(bean);
             notifyDataSetChanged();
         }
     }

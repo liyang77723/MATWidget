@@ -16,5 +16,7 @@ public interface IHandleAdapterData<T> {
 
     void remove(int pos);
 
+    void remove(T bean);
+
     void clear();
 }

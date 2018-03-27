@@ -64,6 +64,7 @@ public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewH
         return mBeans;
     }
 
+    @Override
     public void add(T bean) {
         if (null != mBeans && null != bean) {
             mBeans.add(bean);
@@ -71,6 +72,7 @@ public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewH
         }
     }
 
+    @Override
     public void addAll(List<T> beans) {
         if (null != mBeans && null != beans) {
             mBeans.addAll(beans);
@@ -88,6 +90,7 @@ public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewH
         }
     }
 
+    @Override
     public void insert(int position, T bean) {
         if (null != mBeans && null != bean) {
             mBeans.add(position, bean);
@@ -95,10 +98,20 @@ public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewH
         }
     }
 
+    @Override
     public void remove(int position) {
         if (null != mBeans && !mBeans.isEmpty()) {
             mBeans.remove(position);
             notifyItemRemoved(position);
+        }
+    }
+
+    @Override
+    public void remove(T bean) {
+        if (null != mBeans && !mBeans.isEmpty()) {
+            int pos = mBeans.indexOf(bean);
+            mBeans.remove(bean);
+            notifyItemRemoved(pos);
         }
     }
 
