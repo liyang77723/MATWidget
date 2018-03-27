@@ -109,9 +109,8 @@ public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewH
     @Override
     public void remove(T bean) {
         if (null != mBeans && !mBeans.isEmpty()) {
-            int pos = mBeans.indexOf(bean);
             mBeans.remove(bean);
-            notifyItemRemoved(pos);
+            notifyDataSetChanged();
         }
     }
 
