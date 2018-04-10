@@ -33,7 +33,7 @@ public class ClickableImageView extends AppCompatImageView {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (isClickable()) {
+        if (isClickable() && isEnabled()) {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     setColorFilter(SELECT_COLOR, PorterDuff.Mode.SRC_ATOP);

@@ -28,6 +28,7 @@
             android:clickable="true"
             android:drawablePadding="4dp"
             android:drawableRight="@mipmap/ic_launcher"
+            android:enabled="false"
             android:focusable="true"
             android:gravity="center"
             android:text="XXX" />

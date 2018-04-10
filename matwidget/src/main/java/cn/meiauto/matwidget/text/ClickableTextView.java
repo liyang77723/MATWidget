@@ -73,7 +73,7 @@ public class ClickableTextView extends AppCompatTextView {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (isClickable()) {
+        if (isClickable() && isEnabled()) {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     setClickStatus();

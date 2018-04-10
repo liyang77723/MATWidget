@@ -1,1 +1,7 @@
-<manifest package="cn.meiauto.matwidget" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.meiauto.matwidget">
+
+    <application>
+        <activity android:name=".activity.ZoomImageViewActivity" />
+    </application>
+</manifest>
