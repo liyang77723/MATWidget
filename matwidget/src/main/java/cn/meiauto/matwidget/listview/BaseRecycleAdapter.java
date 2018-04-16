@@ -121,4 +121,10 @@ public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewH
             notifyDataSetChanged();
         }
     }
+
+    public void addData(T bean) {
+        if (null != mBeans && null != bean) {
+            mBeans.add(bean);
+        }
+    }
 }

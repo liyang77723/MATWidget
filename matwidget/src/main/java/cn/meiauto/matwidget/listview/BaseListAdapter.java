@@ -111,4 +111,10 @@ public class BaseListAdapter<T> extends BaseAdapter implements IHandleAdapterDat
             notifyDataSetChanged();
         }
     }
+
+    public void addData(T bean) {
+        if (null != mBeans && null != bean) {
+            mBeans.add(bean);
+        }
+    }
 }
