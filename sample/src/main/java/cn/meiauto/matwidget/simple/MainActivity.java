@@ -14,7 +14,8 @@ import cn.meiauto.matwidget.listview.IConvertView;
 public class MainActivity extends AppCompatActivity {
 
     Class[] activities = {
-            ZoomImageViewActivity.class
+            ZoomImageViewActivity.class,
+            ScrollRefreshActivity.class
     };
 
     @Override
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView listView = findViewById(R.id.lv_main);
-        BaseListAdapter<Class> adapter = new BaseListAdapter<>(this, android.R.layout.simple_list_item_1, new IConvertView<Class>() {
+        BaseListAdapter<Class> adapter = new BaseListAdapter<>(this,
+                android.R.layout.simple_list_item_1, new IConvertView<Class>() {
             @Override
             public void convertDataToView(BaseViewHolder holder, Class activity, int position) {
                 holder.setText(android.R.id.text1, activity.getSimpleName());

@@ -25,6 +25,7 @@
             android:name=".ZoomImageViewActivity"
             android:theme="@style/AppThemeFullscreen"
             />
+        <activity android:name=".ScrollRefreshActivity" />
     </application>
 
 </manifest>
