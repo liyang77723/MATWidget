@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -109,5 +110,12 @@ public class ClickableTextView extends AppCompatTextView {
                 drawable.setAlpha(255);
             }
         }
+    }
+
+    @Override
+    public void setCompoundDrawables(@Nullable Drawable left, @Nullable Drawable top, @Nullable Drawable right, @Nullable Drawable bottom) {
+        super.setCompoundDrawables(left, top, right, bottom);
+
+        mDrawables = getCompoundDrawables();
     }
 }
