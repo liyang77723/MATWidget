@@ -10,6 +10,7 @@ import android.widget.ListView;
 import cn.meiauto.matwidget.listview.BaseListAdapter;
 import cn.meiauto.matwidget.listview.BaseViewHolder;
 import cn.meiauto.matwidget.listview.IConvertView;
+import cn.meiauto.matwidget.text.ClickableTextView;
 
 public class MainActivity extends AppCompatActivity {
 

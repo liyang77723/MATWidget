@@ -75,20 +75,25 @@ public class ClickableTextView extends AppCompatTextView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isClickable() && isEnabled()) {
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    setClickStatus();
-                    break;
-                case MotionEvent.ACTION_UP:
-                    resetClickStatus();
-                    break;
-                case MotionEvent.ACTION_CANCEL:
-                    resetClickStatus();
-                    break;
-            }
+            handleEvent(event);
         }
         return super.onTouchEvent(event);
     }
+
+    public void handleEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                setClickStatus();
+                break;
+            case MotionEvent.ACTION_UP:
+                resetClickStatus();
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                resetClickStatus();
+                break;
+        }
+    }
+
 
     private void setClickStatus() {
         setTextColor(mTextViewPressedColor);

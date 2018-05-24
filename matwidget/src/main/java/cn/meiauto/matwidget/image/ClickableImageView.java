@@ -34,18 +34,22 @@ public class ClickableImageView extends AppCompatImageView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isClickable() && isEnabled()) {
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    setColorFilter(SELECT_COLOR, PorterDuff.Mode.SRC_ATOP);
-                    break;
-                case MotionEvent.ACTION_UP:
-                    clearColorFilter();
-                    break;
-                case MotionEvent.ACTION_CANCEL:
-                    clearColorFilter();
-                    break;
-            }
+            handleEvent(event);
         }
         return super.onTouchEvent(event);
+    }
+
+    public void handleEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                setColorFilter(SELECT_COLOR, PorterDuff.Mode.SRC_ATOP);
+                break;
+            case MotionEvent.ACTION_UP:
+                clearColorFilter();
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                clearColorFilter();
+                break;
+        }
     }
 }
