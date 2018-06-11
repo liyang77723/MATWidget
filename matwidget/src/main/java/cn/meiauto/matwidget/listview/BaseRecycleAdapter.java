@@ -17,36 +17,36 @@ import java.util.List;
  * @author LiYang
  */
 public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewHolder> implements IHandleAdapterData<T> {
-    private Context mContext;
-    private List<T> mBeans;
+    protected Context context;
+    protected List<T> datas;
     private int mLayoutResId;
     private IConvertView<T> mIConvertView;
 
     public BaseRecycleAdapter(Context context, int layoutResId, IConvertView<T> iConvertView) {
-        mContext = context;
-        mBeans = new ArrayList<>();
+        this.context = context;
+        datas = new ArrayList<>();
         mLayoutResId = layoutResId;
         mIConvertView = iConvertView;
     }
 
     @Override
     public int getItemCount() {
-        return mBeans.size();
+        return datas.size();
     }
 
     public T getItem(int postion) {
-        return mBeans.get(postion);
+        return datas.get(postion);
     }
 
     @Override
     public BaseRecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(mLayoutResId, parent, false);
+        View view = LayoutInflater.from(context).inflate(mLayoutResId, parent, false);
         return new BaseRecycleViewHolder(view, mClickListener, mLongClickListener);
     }
 
     @Override
     public void onBindViewHolder(final BaseRecycleViewHolder holder, int position) {
-        mIConvertView.convertDataToView(holder.getHolder(), mBeans.get(position), position);
+        mIConvertView.convertDataToView(holder.getHolder(), datas.get(position), position);
     }
 
     private IOnItemClickListener mClickListener;
@@ -61,70 +61,70 @@ public class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewH
     }
 
     public List<T> getBeans() {
-        return mBeans;
+        return datas;
     }
 
     @Override
     public void add(T bean) {
-        if (null != mBeans && null != bean) {
-            mBeans.add(bean);
-            notifyItemChanged(mBeans.size() - 1);
+        if (null != datas && null != bean) {
+            datas.add(bean);
+            notifyItemChanged(datas.size() - 1);
         }
     }
 
     @Override
     public void addAll(List<T> beans) {
-        if (null != mBeans && null != beans) {
-            mBeans.addAll(beans);
+        if (null != datas && null != beans) {
+            datas.addAll(beans);
             int addSize = beans.size();
-            notifyItemRangeChanged(mBeans.size() - addSize - 1, addSize);
+            notifyItemRangeChanged(datas.size() - addSize - 1, addSize);
         }
     }
 
     @Override
     public void addAll(T[] beans) {
-        if (null != mBeans && null != beans) {
-            Collections.addAll(mBeans, beans);
+        if (null != datas && null != beans) {
+            Collections.addAll(datas, beans);
             int addSize = beans.length;
-            notifyItemRangeChanged(mBeans.size() - addSize - 1, addSize);
+            notifyItemRangeChanged(datas.size() - addSize - 1, addSize);
         }
     }
 
     @Override
     public void insert(int position, T bean) {
-        if (null != mBeans && null != bean) {
-            mBeans.add(position, bean);
+        if (null != datas && null != bean) {
+            datas.add(position, bean);
             notifyItemInserted(position);
         }
     }
 
     @Override
     public void remove(int position) {
-        if (null != mBeans && !mBeans.isEmpty()) {
-            mBeans.remove(position);
+        if (null != datas && !datas.isEmpty()) {
+            datas.remove(position);
             notifyItemRemoved(position);
         }
     }
 
     @Override
     public void remove(T bean) {
-        if (null != mBeans && !mBeans.isEmpty()) {
-            mBeans.remove(bean);
+        if (null != datas && !datas.isEmpty()) {
+            datas.remove(bean);
             notifyDataSetChanged();
         }
     }
 
     @Override
     public void clear() {
-        if (null != mBeans && !mBeans.isEmpty()) {
-            mBeans.clear();
+        if (null != datas && !datas.isEmpty()) {
+            datas.clear();
             notifyDataSetChanged();
         }
     }
 
     public void addData(T bean) {
-        if (null != mBeans && null != bean) {
-            mBeans.add(bean);
+        if (null != datas && null != bean) {
+            datas.add(bean);
         }
     }
 }
